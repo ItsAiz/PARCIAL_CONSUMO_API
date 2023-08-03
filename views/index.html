@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Página principal</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="/scripts.js"></script>
+  </head>
+  <body>
+    <div class="container">
+        <h1>Lista de Autores</h1>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>id</th>
+                    <th>Nombre</th>
+                    <th>Fecha Nacimiento</th>
+                </tr>
+            </thead>
+            <tbody id="body">
+                <script>
+                    loadAuthors()
+                    .then( resp => {
+                        if( resp.state ){
+                            resp.data.forEach( author => {
+                                const row = document.createElement("tr")
+                                const colId = document.createElement("td")
+                                colId.append( document.createTextNode(`${author.id}`))
+                                row.append(colId)
+
+                                const colName = document.createElement("td")
+                                colName.append( document.createTextNode(`${author.name}`))
+                                row.append(colName)
+
+                                const colBirthday = document.createElement("td")
+                                colBirthday.append( document.createTextNode(`${author.birthday}`))
+                                row.append(colBirthday)
+
+                                document.getElementById("body").append(row)
+                            })
+                        }else{
+                            console.log("ohhh, algo ha salido mal")
+                        }     
+                    })
+                    .catch( err => console.log(err))
+                </script>
+
+            </tbody>
+        </table>
+        <a href="/authors/getAddAuthor" class="btn btn-primary col-12"> Add Author</a>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+  </body>
+</html>
