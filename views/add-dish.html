@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Add Dish</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+</head>
+<body>
+  <div class="container">
+    <div class="card">
+      <div class="card-header">
+        <h1>Add new Dish</h1>
+      </div>
+      <div class="card-body">
+        <div class="row g-3">
+          <div class="col">
+            <input type="text" class="form-control" placeholder="Id Dish" aria-label="Id Dish" id="idDish">
+          </div>
+          <div class="col">
+            <input type="text" class="form-control" placeholder="Name" aria-label="Name" id="dishName">
+          </div>
+          <div class="col">
+            <input type="number" class="form-control" placeholder="Calories" aria-label="Calories" id="calories">
+          </div>
+          <div class="col">
+            <select class="form-select" id="isVegetarian">
+              <option value="true">Vegetarian</option>
+              <option value="false">Non-Vegetarian</option>
+            </select>
+          </div>
+          <div class="col">
+            <input type="number" class="form-control" placeholder="Value" aria-label="Value" id="value">
+          </div>
+          <div class="col">
+            <input type="text" class="form-control" placeholder="Comments" aria-label="Comments" id="comments">
+          </div>
+        </div>
+      </div>
+      <div class="row mt-3">
+        <button class="btn btn-primary" id="btnAddDish">Add Dish</button>
+      </div>
+      <br>
+      <div class="row">
+        <a href="/" class="btn btn-secondary col-12"> View Dishes</a>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+  <script src="/scripts.js"></script>
+</body>
+</html>
